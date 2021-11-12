@@ -55,11 +55,14 @@ const Login = () => {
               required
               className="form-control w-75"
             />
-            <button className="btn btn-dark w-75 my-4" onClick={handleLogIn}>
+            <button className="btn btn-success w-75 my-4" onClick={handleLogIn}>
               Submit
             </button>
             <div className="mb-3">--------OR-----------</div>
-            <button className="btn btn-dark w-75" onClick={handleGoogleLogIn}>
+            <button
+              className="btn btn-primary w-75"
+              onClick={handleGoogleLogIn}
+            >
               {" "}
               Login with google
             </button>

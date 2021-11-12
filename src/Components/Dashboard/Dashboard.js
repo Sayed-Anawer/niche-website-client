@@ -23,7 +23,10 @@ const Dashboard = () => {
           <ul className="nav flex-column text-center text-md-start">
             <li className="mt-3">
               <Link className="nav-link" to={`/home`}>
-                <span className="h6 text-light ">Go to Home</span>
+                <span className="h6 text-light ">
+                  <i className="bi bi-house-door-fill h4"></i>{" "}
+                  <span className="h4">Go to Home </span>
+                </span>
               </Link>
             </li>
             {!admin && (
@@ -76,10 +79,10 @@ const Dashboard = () => {
               {" "}
               <span
                 onClick={logOut}
-                className="h6 text-warning nav-link"
+                className="h5 text-warning nav-link"
                 type="button"
               >
-                Logout
+                <i className="bi bi-box-arrow-right me-1"></i>Logout
               </span>
             </li>
           </ul>

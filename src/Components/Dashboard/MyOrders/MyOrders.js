@@ -34,7 +34,7 @@ const MyOrders = () => {
         <div>
           <img
             className="img-fluid"
-            src="https://cdn.iconscout.com/icon/free/png-256/data-not-found-1965034-1662569.png"
+            src="https://i.ibb.co/277JQj1/nos-removebg-preview-1.png"
             alt=""
           />
         </div>

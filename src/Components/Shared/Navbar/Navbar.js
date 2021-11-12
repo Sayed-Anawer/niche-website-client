@@ -5,12 +5,10 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <span className="ms-2 text-danger h4 custom-style p-2 ">
-              Car's House
-            </span>
+            <span className="ms-2  h4 custom-style p-2 ">Car's House</span>
           </Link>
           <button
             className="navbar-toggler"
@@ -26,12 +24,12 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-1 mb-lg-0 align-items-center">
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to="/" className="nav-link text-dark h5">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/explore" className="nav-link">
+                <Link to="/explore" className="nav-link text-dark h5">
                   Explore more cars
                 </Link>
               </li>
@@ -39,7 +37,7 @@ const Navbar = () => {
               {user.email ? (
                 <>
                   <li className="nav-item">
-                    <Link to={`/dashboard`} className="nav-link">
+                    <Link to={`/dashboard`} className="nav-link text-dark h5">
                       Dashboard
                     </Link>
                   </li>{" "}
@@ -60,8 +58,9 @@ const Navbar = () => {
                   ) : (
                     <span className="me-2 text-white">Your account</span>
                   )}
-                  <button className="btn btn-danger" onClick={logOut}>
+                  <button className="btn btn-danger " onClick={logOut}>
                     {" "}
+                    <i className="bi bi-box-arrow-right me-1 fw-bold "></i>
                     Logout
                   </button>
                 </>
@@ -70,7 +69,7 @@ const Navbar = () => {
                   {" "}
                   <li className="nav-item">
                     <Link to="/login" className="nav-link">
-                      <button className="btn btn-primary">Login</button>
+                      <button className="btn btn-dark">Login</button>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -80,7 +79,6 @@ const Navbar = () => {
                   </li>
                 </>
               )}
-              )
             </ul>
           </div>
         </div>

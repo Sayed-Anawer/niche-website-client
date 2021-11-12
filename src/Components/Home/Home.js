@@ -22,7 +22,7 @@ const Home = () => {
 
         <Banner2 />
         <div className="container my-5">
-          <h2 className="text-center  ">
+          <h2 className="text-center  py-2" style={{ fontSize: "2.8rem" }}>
             The <span className="text-danger "> Latest </span> New car{" "}
           </h2>
           <div className="row row-cols-1 row-cols-md-3 g-4 ">

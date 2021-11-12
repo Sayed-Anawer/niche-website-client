@@ -36,7 +36,7 @@ const MakeAdmin = () => {
           placeholder="Enter email"
           onBlur={handleOnBlur}
         />
-        <button className="btn btn-dark ">
+        <button className="btn btn-primary ms-2 ">
           {" "}
           <small>Make Admin</small>{" "}
         </button>

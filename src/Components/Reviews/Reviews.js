@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+import { slidesToShowPlugin } from "@brainhubeu/react-carousel";
 import "./reviews.css";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -12,77 +15,81 @@ const Reviews = () => {
 
   return (
     <>
-      <h2 className="container text-center text-danger">Top reviews</h2>
-      <div
-        className=" container w-50 my-5 slider"
-        style={{ backgroundColor: "#221512" }}
-      >
-        <div
-          id="carouselExampleInterval"
-          className="carousel slide"
-          data-bs-ride="carousel"
+      <section class="container my-5">
+        <h1 class="text-center py-5" style={{ fontSize: "2.8rem" }}>
+          <span>Happy</span>
+          <span class="text-danger"> Clients says</span>
+        </h1>
+        <Carousel
+          plugins={[
+            "infinite",
+            "arrows",
+            {
+              resolve: slidesToShowPlugin,
+              options: {
+                numberOfSlides: 3,
+              },
+            },
+          ]}
+          breakpoints={{
+            640: {
+              plugins: [
+                "infinite",
+                "arrows",
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 1,
+                  },
+                },
+              ],
+            },
+            900: {
+              plugins: [
+                "infinite",
+                "arrows",
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 2,
+                  },
+                },
+              ],
+            },
+          }}
         >
-          <div className="carousel-inner text-center">
-            {reviews.map((review, index) => {
-              return (
-                <div
-                  className={
-                    index === 0 ? "carousel-item active" : "carousel-item"
-                  }
-                  data-bs-interval="2000"
-                  key={review._id}
-                >
-                  <div className="d-flex flex-column">
-                    <div className="w-100 py-5">
-                      <img
-                        src={review.img}
-                        className="img-fluid  round-img  center"
-                        alt=""
-                      />
-                    </div>
-                    <h4 className="text-light customer-name">{review.name}</h4>
-                    <h4>
-                      <Rating
-                        initialRating={review.rating}
-                        emptySymbol="far fa-star icon-color"
-                        fullSymbol="fas fa-star icon-color"
-                        readonly
-                      ></Rating>
-                    </h4>
-                    <p className="text-light px-5 text-center pb-5 review">
-                      {review.review}
-                    </p>
-                  </div>
+          {reviews.map((review) => {
+            return (
+              <div class="card h-100 mx-2">
+                <img
+                  src={review.img}
+                  class="card-img-top w-50 mx-auto mt-5"
+                  style={{
+                    height: "200px",
+                    width: "100px",
+                    borderRadius: "50%",
+                  }}
+                  alt="..."
+                />
+                <h4 class="text-center py-2 custom-user-name-color">
+                  {review.name}
+                </h4>
+                <h4 className="text-center">
+                  <Rating
+                    initialRating={review.rating}
+                    emptySymbol="far fa-star icon-color"
+                    fullSymbol="fas fa-star icon-color"
+                    readonly
+                  ></Rating>
+                </h4>
+                <div class="card-body">
+                  <p class="card-text text-center pt-3">{review.review}</p>
                 </div>
-              );
-            })}
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon "
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleInterval"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon "
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </section>
     </>
   );
 };
