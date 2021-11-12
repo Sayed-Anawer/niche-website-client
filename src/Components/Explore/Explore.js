@@ -14,11 +14,11 @@ const Explore = () => {
   }, []);
   return (
     <>
-      <div style={{ marginBottom: "300px" }}>
-        <Navbar />
-        <h1 className="text-center text-warning my-4">
-          Here are all our exclusive cars
-        </h1>
+      <Navbar />
+      <div className="container" style={{ marginBottom: "550px" }}>
+        <h2 className="text-center text-danger my-4">
+          Exclusive Cars , Find Your Match
+        </h2>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           {cars.map((car) => {
             return (
@@ -30,9 +30,7 @@ const Explore = () => {
                     <h5 className="card-title my-4">Price : ${car.price}</h5>
                     <p className="card-text">{car.desc}</p>
                     <Link to={`/purchase/${car._id}`}>
-                      <button className="w-100 btn btn-dark">
-                        Purchase now
-                      </button>
+                      <button className="w-100 btn btn-primary">Buy Now</button>
                     </Link>
                   </div>
                 </div>

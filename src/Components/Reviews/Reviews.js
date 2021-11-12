@@ -12,9 +12,7 @@ const Reviews = () => {
 
   return (
     <>
-      <h2 className="container text-center text-warning">
-        Top reviews of customers
-      </h2>
+      <h2 className="container text-center text-danger">Top reviews</h2>
       <div
         className=" container w-50 my-5 slider"
         style={{ backgroundColor: "#221512" }}

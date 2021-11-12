@@ -40,8 +40,8 @@ const Home = () => {
                       <h5 className="card-title my-4">Price : ${car.price}</h5>
                       <p className="card-text">{car.desc}</p>
                       <Link to={`/purchase/${car._id}`}>
-                        <button className="w-100 btn btn-dark">
-                          Purchase now
+                        <button className="w-100 btn btn-primary">
+                          Buy Now
                         </button>
                       </Link>
                     </div>

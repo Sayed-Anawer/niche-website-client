@@ -16,7 +16,7 @@ const Subscribe = () => {
             className="form-control p-3"
             placeholder="Enter email"
           />
-          <button className="btn btn-dark">Subscribe</button>
+          <button className="btn btn-danger">Subscribe</button>
         </div>
       </div>
     </div>
