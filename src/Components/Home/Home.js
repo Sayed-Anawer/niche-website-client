@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Banner2 from "../Banner2/Banner2";
+import Banner from "../Banner/Banner";
+import CarOperator from "../CarOperator/CarOperator";
 import Reviews from "../Reviews/Reviews";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import Subscribe from "../Subscribe/Subscribe";
 
 const Home = () => {
+  document.title = "Home";
   const [cars, setCars] = useState([]);
   useEffect(() => {
     axios
@@ -20,7 +22,7 @@ const Home = () => {
       <div style={{ marginBottom: "370px" }}>
         <Navbar />
 
-        <Banner2 />
+        <Banner />
         <div className="container my-5">
           <h2 className="text-center  py-2" style={{ fontSize: "2.8rem" }}>
             The <span className="text-danger "> Latest </span> New car{" "}
@@ -52,6 +54,7 @@ const Home = () => {
           </div>
         </div>
         <Reviews />
+        <CarOperator />
         <Subscribe />
       </div>
       <Footer />

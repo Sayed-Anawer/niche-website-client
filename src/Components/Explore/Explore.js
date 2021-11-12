@@ -5,6 +5,7 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const Explore = () => {
+  document.title = "Explore more";
   const [cars, setCars] = useState([]);
   useEffect(() => {
     axios
@@ -16,9 +17,10 @@ const Explore = () => {
     <>
       <Navbar />
       <div className="container" style={{ marginBottom: "550px" }}>
-        <h2 className="text-center text-danger my-4">
+        <h2 className="text-center text-danger my-3">
           Exclusive Cars , Find Your Match
         </h2>
+        <h5 className="text-center mb-3">We are here for you</h5>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
           {cars.map((car) => {
             return (

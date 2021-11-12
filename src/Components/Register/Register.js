@@ -7,6 +7,7 @@ import Navbar from "../Shared/Navbar/Navbar";
 import "./register.css";
 
 const Register = () => {
+  document.title = "Register";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");

@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 const Purchase = () => {
+  document.title = "Purchase";
   const [details, setDetails] = useState([]);
   const history = useHistory();
   const { carID } = useParams();
@@ -27,7 +29,13 @@ const Purchase = () => {
       .post("https://arcane-peak-21353.herokuapp.com/purchasedCars", data)
       .then((res) => {
         if (res.data.acknowledged) {
-          alert("Your Car has been Purchased successfully");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Car has been Purchased successfully",
+            showConfirmButton: false,
+            timer: 1000,
+          });
           history.push("/");
           reset();
         }
@@ -51,13 +59,14 @@ const Purchase = () => {
               <div>
                 <img
                   src={newData.img}
-                  className="img-fluid w-50 ms-4 mb-4"
+                  className="img-fluid w-50 ms-4 mb-4 p-1"
+                  style={{ border: "2px dashed black" }}
                   alt=""
                 />
               </div>
-              <h3>Description of {newData.name}</h3>
+              <h3 className="text-primary">Description of {newData.name}</h3>
               <p> {newData?.desc} </p>
-              <h3>Fahim's car empire benefits</h3>
+              <h3 className="text-success"> Car's House benefits</h3>
               <ul>
                 <li>7 Days Money Back Guarantee</li>
                 <li>6 Months Comprehensive Warranty</li>

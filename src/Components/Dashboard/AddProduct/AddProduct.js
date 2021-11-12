@@ -1,15 +1,23 @@
 import axios from "axios";
 import React from "react";
+import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 const AddProduct = () => {
+  document.title = "Dashboard | Add Product";
   const { register, handleSubmit, reset } = useForm();
-  document.title = "Add a Product";
+
   const onSubmit = (data) => {
     axios
       .post("https://arcane-peak-21353.herokuapp.com/addProduct", data)
       .then((res) => {
         if (res.data.insertedId) {
-          alert("Product added");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Product Added Successfully",
+            showConfirmButton: false,
+            timer: 1000,
+          });
           reset();
         }
       });

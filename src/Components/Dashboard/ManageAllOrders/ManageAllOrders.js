@@ -1,10 +1,12 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 import React, { useEffect, useState } from "react";
 
 const ManageAllOrders = () => {
+  document.title = "Dashboard | Manage All Orders";
   const [manageAllOrders, setManageAllOrders] = useState([]);
   const [status, setStatus] = useState(0);
-  document.title = "Manage All Trips";
+
   useEffect(() => {
     axios
       .get("https://arcane-peak-21353.herokuapp.com/manageAllOrders")
@@ -13,21 +15,31 @@ const ManageAllOrders = () => {
 
   // Handle delete functionality
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete ?");
-    if (proceed) {
-      axios
-        .delete(
-          `https://arcane-peak-21353.herokuapp.com/deletePurchasedCars/${id}`
-        )
-        .then((res) => {
-          if (res.data.deletedCount > 0) {
-            const remaining = manageAllOrders.filter(
-              (order) => order._id !== id
-            );
-            setManageAllOrders(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You Want to Delete !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: " #d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(
+            `https://arcane-peak-21353.herokuapp.com/deletePurchasedCars/${id}`
+          )
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              const remaining = manageAllOrders.filter(
+                (order) => order._id !== id
+              );
+              setManageAllOrders(remaining);
+            }
+          });
+        Swal.fire("Deleted!", "Order has been deleted.", "success");
+      }
+    });
   };
 
   // Handle Edit Status
@@ -36,7 +48,13 @@ const ManageAllOrders = () => {
       .put(`https://arcane-peak-21353.herokuapp.com/updateStatus/${id}`)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
-          alert("Car has been Shipped Succesfully");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Car has been Shipped Succesfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           setStatus(status + 1);
         }
       });

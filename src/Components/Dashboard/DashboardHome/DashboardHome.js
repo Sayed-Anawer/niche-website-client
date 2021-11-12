@@ -2,6 +2,7 @@ import React from "react";
 import useAuth from "../../../hooks/useAuth";
 
 const DashboardHome = () => {
+  document.title = "Dashboard";
   const { user } = useAuth();
   return (
     <div className="container mt-5">

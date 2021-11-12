@@ -1,16 +1,23 @@
 import axios from "axios";
 import React from "react";
+import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 const AddReview = () => {
   const { register, handleSubmit, reset } = useForm();
-  document.title = "Add More Trips";
+  document.title = "Dashboard | Add Review";
 
   const onSubmit = (data) => {
     axios
       .post("https://arcane-peak-21353.herokuapp.com/reviews", data)
       .then((res) => {
         if (res.data.insertedId) {
-          alert("Your Review has been  Added");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Review has been  Added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           reset();
         }
       });

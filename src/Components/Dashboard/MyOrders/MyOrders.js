@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
@@ -16,17 +17,27 @@ const MyOrders = () => {
   console.log(myOrders);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete ?");
-    if (proceed) {
-      axios
-        .delete(`https://arcane-peak-21353.herokuapp.com/deleteCar/${id}`)
-        .then((res) => {
-          if (res.data.deletedCount > 0) {
-            const remaining = myOrders.filter((car) => car._id !== id);
-            setMyOrders(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete ?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: " #d33",
+      cancelButtonColor: " #3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios
+          .delete(`https://arcane-peak-21353.herokuapp.com/deleteCar/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              const remaining = myOrders.filter((car) => car._id !== id);
+              setMyOrders(remaining);
+            }
+          });
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
   };
   if (!myOrders || myOrders.length === 0) {
     return (

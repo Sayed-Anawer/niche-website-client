@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Swal from "sweetalert2";
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
   const handleOnBlur = (e) => {
@@ -7,6 +7,7 @@ const MakeAdmin = () => {
   };
 
   const handleAdminSubmit = (e) => {
+    document.title = "Dashboard | Make an Admin";
     const user = { email };
     fetch("https://arcane-peak-21353.herokuapp.com/users/admin", {
       method: "PUT",
@@ -19,7 +20,13 @@ const MakeAdmin = () => {
       .then((data) => {
         if (data.modifiedCount) {
           console.log(data);
-          alert("Made admin successfully");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Made admin successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           e.target.reset();
         }
       });

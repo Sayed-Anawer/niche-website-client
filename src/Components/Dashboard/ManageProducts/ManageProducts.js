@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const ManageAllOrders = () => {
   const [manageProducts, setManageProducts] = useState([]);
 
-  document.title = "Manage All Trips";
+  document.title = "Dashboard | Manage Products";
   useEffect(() => {
     axios
       .get("https://arcane-peak-21353.herokuapp.com/allCars")
