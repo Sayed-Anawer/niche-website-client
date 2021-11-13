@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Welcome to  Car's House.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project I implement some Car service . Click to visit [Car's House](https://nishe-project-assignment.web.app/).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ - #### Mobile Responsive.
+ - #### Implemented Firebase Authentication system. 
+ - #### Implemented user Name in header/navbar after login.
+ - #### Added Sign in with google , user can easily login or Sign up by using google
+ - #### Implemented Dynamic route which is  PrivateRoute , if user login then they will visit the PrivateRoute only.
+ - #### When user choose any service without logged in , he/she will redirect to the login page , After login he/she redirect to that page where he/she wanted to go .
+ - #### Implemented Log out button , user can log out from the website.
+ - #### Implement a 404 Not Found Page. And user can go back home from this page.
+ - #### Normal User can see his/her order in My Order page in Dashboard.
+ - #### User can Cancel their Order. 
+ - #### Normal user can visit only Dashboard (Pay,Add Review,My orders) page. 
 
-### `yarn test`
+ - #### In the (Manage All order,Add Product,Make Admin,Manage Product ) page only Admin user can see and can delete orders.
+ - #### Implemented Status update functionality Pending to Shipped.
+ - #### Implemented with mongoDB noSQL database.
+ - #### In the Add More Produc page User can Add new Car service to the home page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Descreption  
 
-### `yarn build`
+In this project I have build a Car service. I use Front end JavaScript library React.For style I used Bootstrap.
+User can see services from the home page and if user logged in they can visit services details page and also can Buy car.
+All the secret information is secured via .env file.
+ 
+  
+## API Reference
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Here I use my own made API and hosted it to heroku 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```https
+ GET 'https://arcane-peak-21353.herokuapp.com/'
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+  
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Client:** React, Bootstrap 5, react-hook-form, CSS3, react-spinners, sweetalert2, react-carousel, firebase-auth, .env 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Server:** Node, Express, Cors, dotenv
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Database:** MongoDB (noSQL)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Hosting:** Firebase, heroku
+  
+## Author
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  [@Sayed-Anawer](https://www.github.com/sayed-anawer)
