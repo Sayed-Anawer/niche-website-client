@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { SpinnerCircular } from "spinners-react";
 
 const ManageAllOrders = () => {
   const [manageProducts, setManageProducts] = useState([]);
@@ -31,10 +32,15 @@ const ManageAllOrders = () => {
 
   if (!manageProducts) {
     return (
-      <div
-        className=" spinner-border text-primary text-center"
-        role="status"
-      ></div>
+      <div className="d-flex justify-content-center align-items-center ">
+        <SpinnerCircular
+          size={90}
+          thickness={149}
+          speed={107}
+          color="rgba(57, 106, 172, 1)"
+          secondaryColor="rgba(0, 0, 0, 0.44)"
+        />
+      </div>
     );
   } else if (manageProducts.length === 0) {
     return (

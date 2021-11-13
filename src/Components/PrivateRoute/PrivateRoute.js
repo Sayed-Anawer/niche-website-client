@@ -1,19 +1,20 @@
 import React from "react";
 import { Redirect, Route } from "react-router";
+import { SpinnerCircular } from "spinners-react";
 import useAuth from "../../hooks/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading, admin } = useAuth();
   if (isLoading) {
     return (
-      <div className="d-flex justify-content-center align-items-center spinner">
-        <div
-          className="spinner-border"
-          role="status"
-          style={{ width: "9rem", height: "9rem" }}
-        >
-          <span className="visually-hidden">Loading...</span>
-        </div>
+      <div className="d-flex justify-content-center align-items-center ">
+        <SpinnerCircular
+          size={90}
+          thickness={149}
+          speed={107}
+          color="rgba(57, 106, 172, 1)"
+          secondaryColor="rgba(0, 0, 0, 0.44)"
+        />
       </div>
     );
   }

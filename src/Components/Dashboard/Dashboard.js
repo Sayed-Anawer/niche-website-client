@@ -16,6 +16,7 @@ import Payment from "./Payment/Payment";
 const Dashboard = () => {
   const { logOut, admin } = useAuth();
   let { path, url } = useRouteMatch();
+
   return (
     <div className="container-fluid ">
       <div className="row">
