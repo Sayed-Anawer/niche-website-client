@@ -14,7 +14,6 @@ const ManageAllOrders = () => {
 
   // Handle delete functionality
   const handleDelete = (id) => {
-    console.log(id);
     const proceed = window.confirm("Are you sure, you want to delete ?");
     if (proceed) {
       axios

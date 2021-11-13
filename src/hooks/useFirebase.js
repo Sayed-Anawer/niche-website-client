@@ -23,7 +23,6 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         saveUser(user.email, user.displayName, "PUT");
-        console.log(result.user);
       })
       .then(() => {
         const destination = location?.state?.from || "/";
@@ -47,9 +46,8 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         });
-        history.replace("/");
-
-        console.log(result.user);
+        history.push("/");
+        window.location.reload();
       })
 
       .catch((error) => {
@@ -66,8 +64,6 @@ const useFirebase = () => {
 
         const destination = location?.state?.from || "/";
         history.replace(destination);
-
-        console.log(result.user);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -107,7 +103,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    console.log(`I am ${email}`);
+
     fetch("https://arcane-peak-21353.herokuapp.com/users", {
       method: method,
       headers: {

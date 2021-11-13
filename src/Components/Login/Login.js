@@ -42,7 +42,7 @@ const Login = () => {
               name=""
               onBlur={handleEmail}
               id="email"
-              placeholder="your email"
+              placeholder="Email"
               required
               className="form-control w-75"
             />
@@ -52,12 +52,12 @@ const Login = () => {
               name=""
               id="password"
               onBlur={handlePassword}
-              placeholder="your password"
+              placeholder="Password"
               required
               className="form-control w-75"
             />
             <button className="btn btn-success w-75 my-4" onClick={handleLogIn}>
-              Submit
+              Login
             </button>
             <div className="mb-3">--------OR-----------</div>
             <button

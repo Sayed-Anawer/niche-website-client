@@ -14,8 +14,6 @@ const MyOrders = () => {
       .then((res) => setMyOrders(res.data));
   }, []);
 
-  console.log(myOrders);
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

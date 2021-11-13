@@ -43,7 +43,7 @@ const Register = () => {
           <div className="col-md-6">
             <input
               type="text"
-              placeholder="your name"
+              placeholder="Name"
               id="name"
               onBlur={handleNameChange}
               required
@@ -55,7 +55,7 @@ const Register = () => {
               name=""
               onBlur={handleEmailChange}
               id="email"
-              placeholder="your email"
+              placeholder="Email"
               required
               className="form-control w-75"
             />
@@ -65,15 +65,21 @@ const Register = () => {
               name=""
               id="password"
               onBlur={handlePasswordChange}
-              placeholder="your password"
+              placeholder="Password"
               required
               className="form-control w-75"
             />
-            <button className="btn btn-dark w-75 my-4" onClick={handleSubmit}>
-              Submit
+            <button
+              className="btn btn-primary w-75 my-4"
+              onClick={handleSubmit}
+            >
+              Register
             </button>
             <div className="mb-3">--------OR-----------</div>
-            <button className="btn btn-dark w-75 " onClick={handleGoogleLogIn}>
+            <button
+              className="btn btn-danger w-75 "
+              onClick={handleGoogleLogIn}
+            >
               {" "}
               Register with google
             </button>

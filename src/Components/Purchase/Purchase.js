@@ -40,7 +40,6 @@ const Purchase = () => {
           reset();
         }
       });
-    console.log(data);
   };
 
   if (!newData) {

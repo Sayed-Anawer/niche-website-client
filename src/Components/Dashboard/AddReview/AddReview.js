@@ -21,7 +21,6 @@ const AddReview = () => {
           reset();
         }
       });
-    console.log(data);
   };
   return (
     <div
