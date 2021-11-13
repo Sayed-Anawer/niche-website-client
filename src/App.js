@@ -8,6 +8,7 @@ import Login from "./Components/Login/Login";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Purchase from "./Components/Purchase/Purchase";
 import Register from "./Components/Register/Register";
+import NotFound from "./Components/NotFound/NotFound";
 import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
+
             <PrivateRoute path="/dashboard">
               <Dashboard />
             </PrivateRoute>
@@ -39,6 +41,9 @@ function App() {
             <PrivateRoute exact path="/purchase/:carID">
               <Purchase />
             </PrivateRoute>
+            <Route path="*">
+              <NotFound />
+            </Route>
           </Switch>
         </BrowserRouter>
       </AuthProvider>
